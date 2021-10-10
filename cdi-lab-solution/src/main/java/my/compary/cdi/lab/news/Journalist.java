@@ -11,6 +11,7 @@ public class Journalist {
     private Event<String> event;
 
     public void receiveNews(String news) {
-         this.event.fire(news);
+        //TODO: Notify all the observers by using the event object to fire the news.
+        this.event.fire(news);
     }
 }

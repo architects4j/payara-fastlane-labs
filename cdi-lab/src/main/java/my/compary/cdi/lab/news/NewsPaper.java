@@ -9,7 +9,8 @@ public class NewsPaper implements Consumer<String> {
     private static final Logger LOGGER = Logger.getLogger(NewsPaper.class.getName());
 
     @Override
-    public void accept(@Observes String news) {
+    //TODO: Annotate the parameter news with the annotation that will enable notifications, as an Observer
+    public void accept(String news) {
         LOGGER.info("We got the news, we'll publish it on a newspaper: " + news);
     }
 }

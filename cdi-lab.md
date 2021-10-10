@@ -128,9 +128,41 @@ Now, let's start practicing with the Vehicle example demonstrated by the instruc
 
 7. Question: Did you get a different output message? Why changing the scope of the Car bean changed the behavior of our code? 
 
+### Producers and Consumers
 
+When working with Java code, we can leverage the CDI API to create classes that will behave and producers and consumers. In other words, instead of invoking a behavior of a specific class, we can instead create decoupled code that reacts to specific events in the container. Let's see this in action by trying out the news example demonstrated by the instructor.
 
+1. Open the project `cdi-lab` in your IDE of choice. In this project we have the package `my.compary.cdi.lab.news`  with the classes:
 
+   1. `Journalist`  class that is a producer responsible for notifying the news to every consumer in the project;
+   2. There are three consumers in this project:  `Magazine`, `Newspaper`, and `SocialMedia` .
 
+2. Open the `Journalist.java` class, and:
 
+   1. Analyse the different CDI annotations, like `@ApplicationScoped` and `@Inject`. 
+      1. Question: What is this "Event" class and what can you use it for?
+   2. On the line 14, inside the method `receiveNews` , fire events containing the news, using the injected object `event`.
 
+3. Open the `Magazine`, `Newspaper`, and `SocialMedia` classes.
+
+   1. Notice it implements the interface `java.util.function.Consumer`. 
+   2. Fix the method `accept`, by making it react to events that were fired in this application scope. 
+      **TIP:** You may want to use the anotation `@javax.enterprise.event.Observes`;
+
+4. Finally, open the class `App4.java` and analyse it.
+
+5. Validate if you did everything right by running the main method in `App4`. You should see in a log output for each observer (three in total), containing messages like: "We got the news, we'll publish it on Social Media: Java 17 has arrived!!".
+
+   ```
+   INFO: WELD-ENV-002003: Weld SE container 724cb2e4-edb7-4de5-8b0f-df2adc814bb3 initialized
+   Oct 10, 2021 8:52:36 PM my.compary.cdi.lab.news.SocialMedia accept
+   INFO: We got the news, we'll publish it on Social Media: Java 17 has arrived!!
+   Oct 10, 2021 8:52:36 PM my.compary.cdi.lab.news.NewsPaper accept
+   INFO: We got the news, we'll publish it on a newspaper: Java 17 has arrived!!
+   Oct 10, 2021 8:52:36 PM my.compary.cdi.lab.news.Magazine accept
+   INFO: We got the news, we'll publish it on a magazine: Java 17 has arrived!!
+   Oct 10, 2021 8:52:36 PM org.jboss.weld.environment.se.WeldContainer shutdown
+   INFO: WELD-ENV-002001: Weld SE container 724cb2e4-edb7-4de5-8b0f-df2adc814bb3 shut down
+   ```
+
+6. Question: Why these messages were logged, if we never invoked the method `accept` in those classes (e.g. `magazine.accept(news)`)?
