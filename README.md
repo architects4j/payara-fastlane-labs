@@ -1,4 +1,10 @@
-# Payara Micro & MicroProfile Fundamentals (Labs)
+# Labs and exercises
+
+[CDI - Context and Dependency Injection](cdi-lab.md)
+
+# About this Course:
+
+## Payara Micro & MicroProfile Fundamentals (Labs)
 
 In this course, you will learn the fundamentals of how to develop modern cloud-native microservices with Payara Micro and MicroProfile.
 
@@ -6,8 +12,7 @@ MicroProfile is a specification for building microservices architecture. MicroPr
 
 Get Payara Micro: www.payara.fish
 
-
-## Who should attend
+### Who should attend
 
 Developers, software architects, and project managers who want to develop modern cloud-native microservices with Payara Micro. Also trainers and consultants.
 
@@ -17,7 +22,7 @@ Developers, software architects, and project managers who want to develop modern
 * Java trainers
 * Technical consultants and sales engineers
 
-## Prerequisites
+### Prerequisites
 
 * Proficiency in using a Java IDE such as Eclipse, IntelliJ, or Netbeans
 * Fundamental knowledge in Java
@@ -26,7 +31,7 @@ Developers, software architects, and project managers who want to develop modern
 * Experience with Git
 
 
-## Course Objectives
+### Course Objectives
 
 
 By the end of the course, you should be able to meet the following objectives:
@@ -39,7 +44,7 @@ By the end of the course, you should be able to meet the following objectives:
 * Test and check your microservices
 * Build and deploy your microservices
 
-## Course Content
+### Course Content
 
 * Cloud-native microservice architecture
 * MicroProfile introduction and overview
