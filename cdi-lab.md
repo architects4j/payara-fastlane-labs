@@ -166,3 +166,12 @@ When working with Java code, we can leverage the CDI API to create classes that 
    ```
 
 6. Question: Why these messages were logged, if we never invoked the method `accept` in those classes (e.g. `magazine.accept(news)`)?
+
+# Conclusion
+
+There are several ways to use CDI in Java applications. In these exercises you could practice some of the features that can be leverage in application where you can use CDI. 
+
+You also configured and used the specification through Weld, the reference implementation of the specification, but there are several others where each vendor provides their own implementation of the CDI spec.
+
+To know more about CDI, we recommend studying a trusted source of knowledge like the [CDI's user guides](https://docs.jboss.org/cdi/learn/userguide/CDI-user-guide.html). 
+
