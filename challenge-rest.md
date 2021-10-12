@@ -6,7 +6,7 @@ In this exercise you will create a RESTful Java application from scratch, using 
 
 You were recently hired by a small company Acme Store. The company is new to the online world and they have a technical team that want to evaluate what a Java service would look like in case they wanted to start an e-commerce. 
 
-You were given the task to create a sample webservice using Java programming language, and based on the JAX-RS specification. They will evaluate whether they should move foward using Java technologies, using your MVP as a starting point. They've heard of MicroProfile and are interested in a solution with Payara Micro.
+Your first task is to create a sample webservice using Java programming language, and based on the JAX-RS specification. They will evaluate whether they should move foward using Java technologies, using your MVP as a starting point. They've heard of MicroProfile and are interested in a solution with Payara Micro.
 
 ### Goals
 
@@ -132,3 +132,7 @@ To implement the business rules related to the product attributes, you can use B
     ```
 
 If you can successfully execute the above requests, it means your endpoints are working! The next step is to try data that actually breaks the business rules and validate if your application is validating for example, the required fields.
+
+# Congratulations!
+
+You've finished your first task in the Acme Store! You have created the base project that will be later used to persist the e-commerce data using a database, will have properly documented APIs, and much more! We're looking forward to have you helping  with the next task!
