@@ -61,7 +61,7 @@ In this lab, you will use the microprofile starter to generate your first Microp
 
 9. In your browser, you can access the page [http://localhost:8080/data/hello](http://localhost:8080/data/hello). 
 
-10. Question: What are the classes responsible that are responding to this request? 
+10. Question: What are the classes that are responding to this request? 
 
 11. Try changing the message that is displayed in this page. Package your application again, and start it using Java, like we did on steps 6 and 7. 
 
