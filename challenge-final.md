@@ -1,6 +1,6 @@
-# Creating a RESTFul Java application with Payara Micro 
+# Creating an entire RESTFul Java application with Payara Micro 
 
-In this exercise you will create a RESTful Java application from scratch, using Payara Micro. Let's take a look at the use case and the exercise goals. 
+In this final challenge, you will create a RESTful Java application from scratch, using Payara Micro. Let's take a look at the use case and the exercise goals. 
 
 ## Scenario
 
