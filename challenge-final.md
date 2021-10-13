@@ -106,6 +106,47 @@ To store the information in a relational database without vendor-lockin, you can
 
 
 
+The data source guarantees the application does not know which database you're using, thus to change to any database, you only need to replace both the maven dependency and this data source inside the `web.xml`.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <data-source>
+        <name>java:global/JPAExampleDataSource</name>
+        <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
+        <server-name>${server.host}</server-name>
+        <port-number>5432</port-number>
+        <database-name>${server.database}</database-name>
+        <user>${server.user}</user>
+        <password>${server.password}</password>
+    </data-source>
+</web-app>
+```
+
+
+
+The last step is the persistence unit in the `persistence.xml`.
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="JPADatasourceExamplePU" transaction-type="JTA">
+        <jta-data-source>java:global/JPAExampleDataSource</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
+```
+
+
+
+
+
+
+
 **Running your application**
 
 * To test your application, you can package it with Maven, run with Java, and use Postman, curl, or other tool of preference to invoke the rest APIs. 
