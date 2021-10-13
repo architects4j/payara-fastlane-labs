@@ -2,7 +2,8 @@
 
 * [CDI - Context and Dependency Injection](cdi-lab.md)
 * [Getting started with Payara Micro](payara-getting-started.md)
-* [Acme Store - Java RESTFul service with Payara Micro](challenge-rest)
+* [Acme Store - Java RESTFul service with Payara Micro](challenge-rest.md)
+* [RestClient](rest-client-lab.md)
 
 # About this Course:
 
