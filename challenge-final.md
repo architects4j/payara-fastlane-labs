@@ -145,6 +145,20 @@ The last step is the persistence unit in the `persistence.xml`.
 
 
 
+*Using Docker*
+
+![Docker](https://www.docker.com/sites/default/files/horizontal_large.png)
+
+1. Install docker: https://www.docker.com/
+1. https://hub.docker.com/_/postgres
+1. Run docker command
+1. Run PostgreSQL: verify PostgreSQL image name with the command `docker images`, it can be mongodb or mongo, and then execute this command:
+    * `docker run --name postgres-instance -p 5432:5432 -e POSTGRES_PASSWORD=password -e POSTGRES_DB=fishes -d postgres`
+
+![Database](https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png)
+
+
+
 
 
 **Running your application**
@@ -160,7 +174,7 @@ The last step is the persistence unit in the `persistence.xml`.
 * To run your application: 
 
   ```shell
-  java -jar -Djava.net.preferIPv4Stack=true target/acme-store-service-microbundle.jar
+  java -jar -Dserver.host=localhost -Dserver.database=fishes -Dserver.user=postgres -Dserver.password=password -Djava.net.preferIPv4Stack=true target/acme-store-service-microbundle.jar
   ```
 
 * By default it will run on port 8080. So you should be able to test the application with the following request examples:
