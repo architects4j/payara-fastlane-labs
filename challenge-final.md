@@ -31,7 +31,7 @@ Here are the pre-requisites of the first delivery of this application:
   * To update a product: PUT "/products/{productName}"
   * To insert a product: POST "/products/{productName}"
 * Document the API using [Open-API](https://swagger.io/specification/) using [Eclipse Microprofile-Open-API](https://github.com/eclipse/microprofile-open-api)
-* 
+* Store the products in a Postgresql through JPA
 
 # Implementing the project
 
@@ -83,6 +83,28 @@ To implement the business rules related to the product attributes, you can use B
 ```
 
 2. You can use the annotations `@NotBlank` and `@Size` from `javax.validation.constraints` on each attribute to define the rules and error message you want to associate with it.
+
+
+
+**JPA**
+
+To store the information in a relational database without vendor-lockin, you can use Jakarta JPA in your entities. In this example, we'll use Postgresql; thus, we'll include Postgresql driver.
+
+```xml
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>8.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.24</version>
+        </dependency>
+```
+
+
 
 **Running your application**
 
