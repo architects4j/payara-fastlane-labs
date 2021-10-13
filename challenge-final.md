@@ -30,6 +30,8 @@ Here are the pre-requisites of the first delivery of this application:
   * To delete a product: DELETE "/products/{productName}"
   * To update a product: PUT "/products/{productName}"
   * To insert a product: POST "/products/{productName}"
+* Document the API using [Open-API](https://swagger.io/specification/) using [Eclipse Microprofile-Open-API](https://github.com/eclipse/microprofile-open-api)
+* 
 
 # Implementing the project
 
